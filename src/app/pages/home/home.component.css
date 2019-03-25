@@ -1,0 +1,125 @@
+
+.background {
+    background: url("../../../assets/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 740px;
+    width: 100%;
+}
+
+.textTitle {
+    color: white;
+    text-transform: uppercase;
+}
+
+.localContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.ft-size {
+    font-size: 58px;
+}
+
+
+
+.pad {
+    padding: 20%;
+    margin: 15%;
+}
+
+.sdBackground {
+    background: url("../../../assets/adventure-aeroplane-air-travel-131922.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 780px;
+    width: 100%;
+}
+
+.second-part {
+    background-color: #14425d;
+    display: flex;
+    flex-direction: row;
+    height: 780px;
+}
+
+.fife-part {
+    background-color: #14425d;
+    display: flex;
+    flex-direction: row;
+    height: 531px;
+}
+
+.thrd-background {
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+}
+
+.thrd-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 260px;
+    width: 100%;
+}
+
+.fth-one-part-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-top: 10%;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.fth-container {
+    display: flex;
+    flex-direction: column;
+    background: #f6f6f6;
+    height: 880px;
+}
+
+.image {
+    height: 150px;
+    width: 150px;
+}
+
+.cd-part-one{
+    padding: 5%;
+    font-size: 56px;
+}
+
+.cd-part-two{
+    padding: 5%;
+}
+
+.cd-part-three{
+    padding: 5%;
+    font-size: 16px;
+}
+
+.footer {
+    display: block;
+    height: 1000px;
+}
+
+.invalid {
+  border: 1px solid red;
+  background-color: rgb(255, 166, 166);
+}
+
+.input {
+    border: 1px solid, white;
+    background-color: #14425d;
+    
+}
+
+::placeholder {
+    color: white;
+}

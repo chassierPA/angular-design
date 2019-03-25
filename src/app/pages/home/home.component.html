@@ -1,0 +1,102 @@
+<app-static-navbar></app-static-navbar>
+
+<div class="background localContainer">
+  <div class="pad">
+    <h1 class="textTitle text-center text-uppercase ft-size">Lorem Ipsum</h1>
+    <h6 class="textTitle text-center">Lorem Ipsum</h6>
+  </div>
+</div>
+
+
+<div class="align-items-center second-part">
+  <div class="col sdBackground">
+  </div>
+  <div class="col">
+    <div class="p-2 m-5 text-white cd-part-one">
+      <h1 class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+    </div>
+    <div class="p-2 m-5 text-white cd-part-two">
+      <h6>Lorem Ipsum</h6>
+    </div>
+    <div class="p-2 m-5 text-white cd-part-three">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut velit metus, elementum eu molestie at, vehicula in dolor. Sed vehicula sapien quis tortor blandit gravida. Nam pulvinar hendrerit diam facilisis pharetra. Aliquam mollis nec nisi ut mollis. Duis in libero diam. In sodales iaculis arcu vitae fermentum. In sapien ipsum, porttitor a elementum nec, sollicitudin sed eros. Proin laoreet nibh ut risus condimentum dictum. Integer sit amet arcu et est scelerisque tristique. Aenean eleifend ex id nulla commodo consectetur.</p>
+    </div>
+  </div>
+</div>
+
+<div class="thrd-background">
+  <div *ngFor="let thumbnail of _thumbnails; let i=index" [ngStyle]="getBG(i)" class="thrd-container">
+    <h4 class="text-white font-weight-bold op">{{thumbnail.title}}</h4>
+    <p class="text-white">{{thumbnail.desc}}</p>
+  </div>
+</div>
+
+<div class="pt-5 pb-5 text-center fth-container">
+  <h1 class="mt-5">ABOUT OUR PARTENERS</h1>
+  <div class="pt-5">
+    <p>Our customoers</p>
+  </div>
+  <div class="fth-one-part-container">
+    <div *ngFor="let customer of _customers" class="">
+      <img src="{{customer.url}}" class="image">
+      <div class="pt-5">
+        <h4 class="col">{{customer.title}}</h4>
+      </div>
+      <div class="pt-5 pl-5 pr-5">
+        <p class="col">{{customer.desc}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="fife-part pt-5 pb-5">
+  <div class="container p-5">
+    <h1 class="text-center text-white pb-3">CONTACT-US</h1>
+    <form [formGroup]="_frm" novalidate ng-submit="_frm.$valid">
+      <div class="row">
+        <!--Name input validation-->
+        <div class="form-group col">
+          <input type="text" class="form-control input" [ngClass]="{invalid: CheckValidation('name')}" formControlName="name"
+            placeholder="Name *" required>
+          <div class="pt-2" *ngIf="CheckValidation('name')">
+            <p class="alert-danger alert">Name is required</p>
+          </div>
+        </div>
+        <!--Email input validation-->
+        <div class="from-group col">
+          <input class="form-control input" type="email" formControlName="email" [email]="true" placeholder="Email *"
+            [ngClass]="{
+        invalid: CheckValidation('email') || _frm.controls['email'].invalid && (_frm.controls['email'].dirty || _frm.controls['email'].touched)
+      }">
+          <div class="pt-2">
+            <p class="alert-danger alert" *ngIf="CheckValidation('email')">Email
+              is required </p>
+            <p class="alert-danger alert" *ngIf="_frm.controls['email'].invalid && (_frm.controls['email'].dirty || _frm.controls['email'].touched) && !CheckValidation('email')">
+              Email is invalid
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--Subject input validation-->
+      <div class="form-group">
+        <input type="text" class="form-control input" formControlName="subject" placeholder="Subject" required
+          [ngClass]="{invalid: CheckValidation('subject')}">
+        <div class="pt-2" *ngIf="CheckValidation('subject')">
+          <p class="alert-danger alert">Subject is required</p>
+        </div>
+      </div>
+      <!--Message input validation-->
+      <div class="form-group">
+        <textarea class="form-control input text-white" formControlName="message" rows="5" placeholder="Message"
+          required [ngClass]="{invalid: CheckValidation('message')}"></textarea>
+        <div class="pt-2" *ngIf="CheckValidation('message')">
+          <p class="alert-danger alert">Message is required</p>
+        </div>
+      </div>
+      <button class="btn btn-primary w-100" type="submit" (click)="FrmSubmit()">Submit</button>
+    </form>
+  </div>
+</div>
+
+<app-footer></app-footer>
